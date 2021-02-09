@@ -9,6 +9,7 @@ interface BooksContextData {
   favoritesBooks: any;
   addBookFavoriteList(book: any): void;
   removeBookFavoriteList(index: number): any;
+  booksSearchList: Array<any>;
 }
 
 const BooksContext = createContext<BooksContextData>({} as BooksContextData);
@@ -21,6 +22,7 @@ function BooksProvider({ children }: any) {
     favoritesBooks,
     addBookFavoriteList,
     removeBookFavoriteList,
+    booksSearchList,
   } = useBooks();
 
   return (
@@ -32,6 +34,7 @@ function BooksProvider({ children }: any) {
         favoritesBooks,
         addBookFavoriteList,
         removeBookFavoriteList,
+        booksSearchList,
       }}
     >
       {children}
