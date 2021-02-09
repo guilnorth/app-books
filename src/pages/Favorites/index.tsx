@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Text, Div } from 'react-native-magnus';
+import { Div } from 'react-native-magnus';
+import CardBook from '../../components/CardBook';
 
 export default function Favorites() {
   return (
-    <Div p={30} style={styles.container} rounded="md" shadow="sm">
-      <Text color="purple500">Favorites</Text>
+    <Div p="2xl" py="3xl" bg="gray200" style={styles.container}>
+      <CardBook book={{ volumeInfo: { title: 'Favorite 1' } }} />
+      <CardBook book={{ volumeInfo: { title: 'Favorite 2' } }} />
     </Div>
   );
 }

@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import BooksService from '../services/Books';
 
 export default function useBooks() {
   const [paramSearch, setParamSearch] = useState('');
   const [favoritesBooks, setFavoritesBooks] = useState([]);
+  const [booksSearchList, setBooksSearchList] = useState([]);
 
   async function searchBooks() {
-    return [];
+    const results = BooksService.getBooks(paramSearch)
+      .then((response: any) => {
+        setBooksSearchList(response.data);
+      })
+      .catch(() => null);
   }
 
   function addBookFavoriteList(book: any) {
@@ -25,5 +31,6 @@ export default function useBooks() {
     favoritesBooks,
     addBookFavoriteList,
     removeBookFavoriteList,
+    booksSearchList,
   };
 }
