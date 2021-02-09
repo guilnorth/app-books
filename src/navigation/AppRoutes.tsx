@@ -1,17 +1,13 @@
 import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
-import Search from "../pages/Search";
-
+import TabsRoutes from './TabsRoutes';
 
 const Stack = createStackNavigator();
 
-
 let Routes;
-export default Routes = () => {
-    return (
-        <Stack.Navigator headerMode={'none'}>
-            <Stack.Screen name="Tabs" component={Search} />
-        </Stack.Navigator>
-    );
-}
+export default Routes = () => (
+  <Stack.Navigator headerMode="none">
+    <Stack.Screen name="Tabs" component={TabsRoutes} />
+  </Stack.Navigator>
+);
