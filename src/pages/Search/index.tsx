@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
-import { Text, Div, Input, Icon } from 'react-native-magnus';
+import { Div, Input, Icon } from 'react-native-magnus';
 import { BooksContext } from '../../context/BookContext';
-import CardBook from '../../components/CardBook';
+import ListBooks from '../../components/ListBooks';
 
 export default function Search() {
   const {
@@ -15,19 +14,11 @@ export default function Search() {
   return (
     <>
       <Div style={{ flex: 1 }} alignItems="center" bg="indigo800">
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingHorizontal: 50,
-          }}
-          data={booksSearchList.items}
-          renderItem={({ item }) => <CardBook book={item} key={item.id} />}
-        />
-      </Div>
-      <Div p={10} pt={15} style={styles.container} shadow="sm">
+        <ListBooks booksSearchList={booksSearchList.items} />
         <Input
           mb={10}
+          mr={10}
+          ml={10}
           placeholder="Username"
           p={10}
           focusBorderColor="blue700"
@@ -46,9 +37,3 @@ export default function Search() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-  },
-});

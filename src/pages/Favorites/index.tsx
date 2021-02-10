@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { Div } from 'react-native-magnus';
-import CardBook from '../../components/CardBook';
+import ListBooks from '../../components/ListBooks';
+import { BooksContext } from '../../context/BookContext';
 
 export default function Favorites() {
+  const { favoritesBooks } = useContext(BooksContext);
+
   return (
-    <Div p="2xl" py="3xl" bg="gray200" style={styles.container}>
-      <CardBook book={{ volumeInfo: { title: 'Favorite 1' } }} />
-      <CardBook book={{ volumeInfo: { title: 'Favorite 2' } }} />
+    <Div bg="gray200" style={styles.container}>
+      <ListBooks booksSearchList={favoritesBooks} />
     </Div>
   );
 }
