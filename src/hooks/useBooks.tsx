@@ -16,7 +16,7 @@ export default function useBooks() {
 
   function addBookFavoriteList(book: any) {
     // @ts-ignore
-    setFavoritesBooks({ ...favoritesBooks, book });
+    setFavoritesBooks([book, ...favoritesBooks]);
   }
 
   function removeBookFavoriteList(index: number) {
