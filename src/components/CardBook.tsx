@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Div, Button, Image } from 'react-native-magnus';
 import Svg, { Rect } from 'react-native-svg';
 
-export default function CardBook({ book }: any) {
+export default function CardBook({ book, press }: any) {
   return (
     <Div
       m="md"
@@ -13,6 +13,7 @@ export default function CardBook({ book }: any) {
       style={{ width: 290 }}
     >
       <Button
+        onPress={press}
         bg="orange500"
         rounded="xl"
         py="2xl"
