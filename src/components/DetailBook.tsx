@@ -3,9 +3,24 @@ import { Text, Div, Button, Image, Icon } from 'react-native-magnus';
 import { BooksContext } from '../context/BookContext';
 
 export default function DetailBook({ book }: any) {
-  const { addBookFavoriteList, removeBookFavoriteList } = useContext(
-    BooksContext
-  );
+  const {
+    addBookFavoriteList,
+    removeBookFavoriteList,
+    checkIsBookFavorite,
+  } = useContext(BooksContext);
+
+  const favorite = book.isFavoriteBook_APP || checkIsBookFavorite(book.id);
+
+  const onHandleFavoriteButton = () => {
+    if (favorite) {
+      console.log('remove');
+      book.isFavoriteBook_APP = false;
+      removeBookFavoriteList(book);
+    } else {
+      addBookFavoriteList(book);
+    }
+  };
+
   return (
     <Div p={15}>
       <Div flexDir="row" mt={15} alignItems="center">
@@ -31,9 +46,7 @@ export default function DetailBook({ book }: any) {
       </Div>
       <Div mt={20}>
         <Button
-          onPress={() => {
-            addBookFavoriteList(book);
-          }}
+          onPress={onHandleFavoriteButton}
           mt="lg"
           ml="md"
           px="xl"
@@ -44,7 +57,7 @@ export default function DetailBook({ book }: any) {
           shadow={2}
           prefix={
             <Icon
-              name="heart-outline"
+              name={favorite ? 'heart' : 'heart-outline'}
               fontSize={16}
               color="white"
               fontFamily="MaterialCommunityIcons"
@@ -52,7 +65,7 @@ export default function DetailBook({ book }: any) {
             />
           }
         >
-          Salvar nos Favoritos
+          {favorite ? 'Favorito' : 'Salvar nos Favoritos'}
         </Button>
       </Div>
       <Div>
