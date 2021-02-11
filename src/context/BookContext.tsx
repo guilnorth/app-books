@@ -7,9 +7,10 @@ interface BooksContextData {
   setParamSearch(param: string): void;
   searchBooks(): any;
   favoritesBooks: any;
-  addBookFavoriteList(book: any): void;
-  removeBookFavoriteList(index: number): any;
+  addBookFavoriteList(book: Array<any>): void;
+  removeBookFavoriteList(book: any): void;
   booksSearchList: Array<any>;
+  checkIsBookFavorite(index: any): boolean;
 }
 
 const BooksContext = createContext<BooksContextData>({} as BooksContextData);
@@ -23,6 +24,7 @@ function BooksProvider({ children }: any) {
     addBookFavoriteList,
     removeBookFavoriteList,
     booksSearchList,
+    checkIsBookFavorite,
   } = useBooks();
 
   return (
@@ -35,6 +37,7 @@ function BooksProvider({ children }: any) {
         addBookFavoriteList,
         removeBookFavoriteList,
         booksSearchList,
+        checkIsBookFavorite,
       }}
     >
       {children}

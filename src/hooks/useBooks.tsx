@@ -14,14 +14,26 @@ export default function useBooks() {
       .catch(() => null);
   }
 
-  function addBookFavoriteList(book: any) {
-    // @ts-ignore
-    setFavoritesBooks([book, ...favoritesBooks]);
+  function addBookFavoriteList(newFavoriteBook: Array<any>) {
+    if (!checkIsBookFavorite(newFavoriteBook.id)) {
+      // @ts-ignore
+      setFavoritesBooks([
+        { ...newFavoriteBook, isFavoriteBook_APP: true },
+        ...favoritesBooks,
+      ]);
+    }
   }
 
-  function removeBookFavoriteList(index: number) {
-    const books = favoritesBooks.splice(index, 1);
-    setFavoritesBooks({ ...books });
+  function checkIsBookFavorite(idBookCheck: any): boolean {
+    const index = favoritesBooks.findIndex((book) => book.id === idBookCheck);
+    return index !== -1;
+  }
+
+  function removeBookFavoriteList(bookRemove: Array<any>) {
+    const index = favoritesBooks.findIndex((book) => book.id === bookRemove.id);
+    const aux = [...favoritesBooks];
+    aux.splice(index, 1);
+    setFavoritesBooks(aux);
   }
 
   return {
@@ -32,5 +44,6 @@ export default function useBooks() {
     addBookFavoriteList,
     removeBookFavoriteList,
     booksSearchList,
+    checkIsBookFavorite,
   };
 }
