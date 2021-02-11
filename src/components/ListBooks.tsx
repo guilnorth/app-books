@@ -19,7 +19,9 @@ export default function ListBooks({ booksSearchList }: Array<any>) {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingHorizontal: 50,
+          paddingHorizontal: 10,
+          marginTop: 60,
+          paddingBottom: 150,
         }}
         keyExtractor={(item) => item.id}
         data={booksSearchList}

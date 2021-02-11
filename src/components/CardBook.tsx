@@ -10,7 +10,7 @@ export default function CardBook({ book, press }: any) {
       alignItems="center"
       justifyContent="center"
       flex={1}
-      style={{ width: 290 }}
+      style={{ width: 350 }}
     >
       <Button
         onPress={press}
@@ -41,27 +41,36 @@ export default function CardBook({ book, press }: any) {
             />
           </Svg>
         </Div>
-        <Div alignItems="flex-start" zIndex={2}>
-          <Image
-            h={100}
-            w={100}
-            resizeMode="contain"
-            source={{
-              uri: book?.volumeInfo?.imageLinks?.smallThumbnail,
-            }}
-          />
-          <Div>
-            <Div row alignItems="center">
-              <Text color="white" fontSize="xl" fontWeight="bold">
-                {book?.volumeInfo?.title}
-              </Text>
-            </Div>
+        <Div alignItems="flex-start" zIndex={2} m={10}>
+          <Div flexDir="row" justifyContent="flex-start">
+            <Image
+              ml={10}
+              h={100}
+              w={100}
+              resizeMode="contain"
+              source={{
+                uri: book?.volumeInfo?.imageLinks?.smallThumbnail,
+              }}
+            />
             <Text
               color="white"
               fontSize="xl"
-              mt="xl"
-              numberOfLines={1}
+              fontWeight="bold"
+              mr={100}
+              ml={10}
+              style={{ flexWrap: 'wrap' }}
+            >
+              {book?.volumeInfo?.title}
+            </Text>
+          </Div>
+          <Div>
+            <Text
+              color="white"
+              fontSize="xl"
+              m="xl"
+              numberOfLines={5}
               ellipsizeMode="tail"
+              style={{ flexWrap: 'wrap' }}
             >
               {book?.volumeInfo?.description}
             </Text>

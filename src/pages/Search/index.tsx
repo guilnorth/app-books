@@ -16,10 +16,11 @@ export default function Search() {
       <Div style={{ flex: 1 }} alignItems="center" bg="indigo800">
         <ListBooks booksSearchList={booksSearchList.items} />
         <Input
+          style={{ position: 'absolute', bottom: 0 }}
           mb={10}
           mr={10}
           ml={10}
-          placeholder="Username"
+          placeholder="Pesquise pelo livro aqui"
           p={10}
           focusBorderColor="blue700"
           returnKeyType="search"
