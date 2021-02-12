@@ -3,9 +3,7 @@ import React, { createContext } from 'react';
 import useBooks from '../hooks/useBooks';
 
 interface BooksContextData {
-  paramSearch: string;
-  setParamSearch(param: string): void;
-  searchBooks(): any;
+  searchBooks(keepList: boolean): any;
   favoritesBooks: any;
   addBookFavoriteList(book: Array<any>): void;
   removeBookFavoriteList(book: any): void;
@@ -17,8 +15,6 @@ const BooksContext = createContext<BooksContextData>({} as BooksContextData);
 
 function BooksProvider({ children }: any) {
   const {
-    paramSearch,
-    setParamSearch,
     searchBooks,
     favoritesBooks,
     addBookFavoriteList,
@@ -30,8 +26,6 @@ function BooksProvider({ children }: any) {
   return (
     <BooksContext.Provider
       value={{
-        paramSearch,
-        setParamSearch,
         searchBooks,
         favoritesBooks,
         addBookFavoriteList,
