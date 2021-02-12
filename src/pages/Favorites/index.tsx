@@ -1,23 +1,32 @@
 import React, { useContext } from 'react';
-import { StyleSheet } from 'react-native';
-import { Div } from 'react-native-magnus';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { Div, Text } from 'react-native-magnus';
 import ListBooks from '../../components/ListBooks';
 import { BooksContext } from '../../context/BookContext';
 
 export default function Favorites() {
   const { favoritesBooks } = useContext(BooksContext);
 
+  const headerComponent = () => (
+    <Text fontWeight="bold" fontSize="4xl" textAlign="center" color="white">
+      Meus Favoritos
+    </Text>
+  );
   return (
-    <Div bg="gray200" style={styles.container}>
-      <ListBooks booksSearchList={favoritesBooks} />
-    </Div>
+    <SafeAreaView style={{ flex: 1 }}>
+      <Div bg="blue700" style={styles.container}>
+        <ListBooks
+          booksSearchList={favoritesBooks}
+          headerComponent={headerComponent}
+        />
+      </Div>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
