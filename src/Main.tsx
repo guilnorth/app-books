@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'react-native-magnus';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Host } from 'react-native-portalize';
 import Routes from './navigation/AppRoutes';
 import { BooksProvider } from './context/BookContext';
 
@@ -11,7 +12,9 @@ export default function App() {
       <NavigationContainer>
         <BooksProvider>
           <SafeAreaProvider>
-            <Routes />
+            <Host>
+              <Routes />
+            </Host>
           </SafeAreaProvider>
         </BooksProvider>
       </NavigationContainer>
