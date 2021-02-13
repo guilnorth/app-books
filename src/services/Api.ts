@@ -10,7 +10,6 @@ const Api = axios.create({
 Api.interceptors.request.use(
   (config) => {
     config.params = {
-      key: 'AIzaSyAbK3FAjRa4Cq7m9-VrdxqQTyF7SgyBZsA',
       ...config.params,
     };
     return config;

@@ -16,6 +16,7 @@ export default class BooksService {
         q: search,
         startIndex,
         maxResults,
+        orderBy: 'relevance',
       },
     });
   }
