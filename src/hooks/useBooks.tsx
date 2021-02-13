@@ -5,6 +5,7 @@ import { STORAGE_KEY } from '../constants/constants';
 export default function useBooks() {
   const [favoritesBooks, setFavoritesBooks] = useState([]);
   const [booksSearchList, setBooksSearchList] = useState([]);
+  const [term, setTerm] = useState('');
 
   /**
    * Recuperando os favoritos
@@ -17,22 +18,21 @@ export default function useBooks() {
 
   /**
    *
-   * @param paramSearch
    * @param keepList
    */
-  function searchBooks(paramSearch: string, keepList = false): any {
+  function searchBooks(keepList = false): any {
     /** Block request if don't have param or if is the end of list * */
     if (
-      !paramSearch ||
+      !term ||
       (keepList &&
         booksSearchList.items &&
-        booksSearchList?.totalItems == booksSearchList?.items.length)
+        +booksSearchList?.totalItems === +booksSearchList?.items.length)
     )
       return;
 
     const newStartIndex = keepList ? booksSearchList.items.length : 0;
 
-    BooksService.getBooks(paramSearch, newStartIndex)
+    BooksService.getBooks(term, newStartIndex)
       .then((response: any) => {
         const dataList = keepList
           ? {
@@ -92,5 +92,7 @@ export default function useBooks() {
     removeBookFavoriteList,
     booksSearchList,
     checkIsBookFavorite,
+    term,
+    setTerm,
   };
 }
