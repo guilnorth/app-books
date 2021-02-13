@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { Div, Text } from 'react-native-magnus';
 import ListBooks from '../../components/ListBooks';
 import { BooksContext } from '../../context/BookContext';
+import COLORS from '../../styles/colors';
 
 export default function Favorites() {
   const { favoritesBooks } = useContext(BooksContext);
@@ -14,7 +15,7 @@ export default function Favorites() {
   );
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Div bg="blue700" style={styles.container}>
+      <Div style={styles.container} bg={COLORS.bgPageFavorites}>
         <ListBooks
           booksSearchList={favoritesBooks}
           headerComponent={headerComponent}

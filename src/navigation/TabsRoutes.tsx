@@ -1,16 +1,32 @@
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import Search from '../pages/Search';
 import Favorites from '../pages/Favorites';
+import COLORS from '../styles/colors';
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 let TabsRoutes;
 export default TabsRoutes = () => (
-  <Tab.Navigator initialRouteName="Search">
+  <Tab.Navigator
+    initialRouteName="Search"
+    labelStyle={{ fontSize: 16 }}
+    tabBarOptions={{
+      style: {
+        elevation: 0,
+        shadowOpacity: 0,
+        shadowOffset: {
+          height: 0,
+        },
+        borderTopWidth: 0,
+        shadowRadius: 0,
+        backgroundColor: COLORS.primary,
+      },
+      activeTintColor: '#fff',
+      inactiveTintColor: '#718096',
+    }}
+  >
     <Tab.Screen
       name="Favorites"
       component={Favorites}

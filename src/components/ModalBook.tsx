@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-magnus';
 import { Modalize } from 'react-native-modalize';
 import DetailBook from './DetailBook';
+import COLORS from '../styles/colors';
 
 export default function ModalBook({ bookSelected, modalizeRef }: any) {
   const renderHeader = () => (
@@ -22,6 +23,7 @@ export default function ModalBook({ bookSelected, modalizeRef }: any) {
       modalTopOffset={100}
       handlePosition="inside"
       HeaderComponent={renderHeader}
+      modalStyle={{ backgroundColor: COLORS.primary }}
     >
       <DetailBook book={bookSelected} />
     </Modalize>
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
 
-    backgroundColor: 'rgba(0, 0, 0, 1)',
+    backgroundColor: '#fff',
     borderRadius: 15,
   },
 });

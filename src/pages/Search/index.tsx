@@ -4,6 +4,7 @@ import { SafeAreaView, Keyboard } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { BooksContext } from '../../context/BookContext';
 import ListBooks from '../../components/ListBooks';
+import COLORS from '../../styles/colors';
 
 export default function Search() {
   const { searchBooks, booksSearchList } = useContext(BooksContext);
@@ -15,7 +16,7 @@ export default function Search() {
   };
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Div style={{ flex: 1 }} alignItems="center" bg="indigo800">
+      <Div flex={1} alignItems="center" bg={COLORS.bgPageSearch}>
         <ListBooks
           booksSearchList={booksSearchList.items}
           onEndReached={() => handleSearch(true)}
@@ -36,7 +37,7 @@ export default function Search() {
           }
         />
         <Input
-          bg="indigo900"
+          bg={COLORS.primary}
           style={{ position: 'absolute', bottom: 0 }}
           mb={10}
           mr={10}
@@ -46,7 +47,7 @@ export default function Search() {
           p={10}
           fontSize={16}
           color="white"
-          focusBorderColor="indigo900"
+          focusBorderColor={COLORS.primary}
           returnKeyType="search"
           suffix={
             <Button

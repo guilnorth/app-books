@@ -46,6 +46,7 @@ export default function DetailBook({ book }: any) {
       </Div>
       <Div mt={20}>
         <Button
+          fontWeight="bold"
           onPress={onHandleFavoriteButton}
           mt="lg"
           ml="md"
@@ -67,6 +68,14 @@ export default function DetailBook({ book }: any) {
         >
           {favorite ? 'Favorito' : 'Salvar nos Favoritos'}
         </Button>
+      </Div>
+      <Div>
+        <Text mt={10} color="white" fontSize="xl" fontWeight="400">
+          Por:{' '}
+          {book?.volumeInfo?.authors
+            ? book?.volumeInfo?.authors.join(', ')
+            : 'Sem informação de autores'}
+        </Text>
       </Div>
       <Div>
         <Text
