@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Text, Div, Button, Image, Icon } from 'react-native-magnus';
+import * as Linking from 'expo-linking';
 import { BooksContext } from '../context/BookContext';
 import COLORS from '../styles/colors';
 import Globals from '../styles/globals';
@@ -47,20 +48,36 @@ export default function DetailBook({ book }: any) {
               ? book?.volumeInfo?.authors.join(', ')
               : ''}
           </Text>
-          <Button
-            bg="purple100"
-            h={40}
-            w={40}
-            mt={35}
-            rounded="circle"
-            onPress={onHandleFavoriteButton}
-          >
-            <Icon
-              fontSize={16}
-              name={favorite ? 'heart' : 'hearto'}
-              color={COLORS.detailPrimary}
-            />
-          </Button>
+          <Div flexDir="row">
+            <Button
+              bg="purple100"
+              h={40}
+              w={40}
+              mt={35}
+              rounded="circle"
+              onPress={onHandleFavoriteButton}
+            >
+              <Icon
+                fontSize={16}
+                name={favorite ? 'heart' : 'hearto'}
+                color={COLORS.detailPrimary}
+              />
+            </Button>
+            <Button
+              bg="blue100"
+              h={40}
+              w={40}
+              ml={15}
+              mt={35}
+              rounded="circle"
+              onPress={() => {
+                if (book?.volumeInfo?.previewLink)
+                  Linking.openURL(book?.volumeInfo?.previewLink);
+              }}
+            >
+              <Icon fontSize={16} name="google" color="blue600" />
+            </Button>
+          </Div>
         </Div>
       </Div>
 

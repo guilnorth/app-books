@@ -17,6 +17,7 @@ export default class BooksService {
         startIndex,
         maxResults,
         orderBy: 'relevance',
+        fields: 'kind,totalItems,items(kind,id,etag,volumeInfo)',
       },
     });
   }
