@@ -3,12 +3,18 @@ import { FlatList, ScrollView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import CardBook from './CardBook';
 import ModalBook from './ModalBook';
+import COLORS from '../styles/colors';
 
+const defaultStyles = {
+  paddingBottom: 150,
+  // marginTop: 20,
+};
 export default function ListBooks({
   booksSearchList,
   onEndReached,
   headerComponent,
   listEmptyComponent,
+  styles,
 }: Array<any>) {
   const [bookSelected, setBookSelected] = useState({});
   const modalizeRef = useRef<Modalize>(null);
@@ -23,10 +29,11 @@ export default function ListBooks({
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingHorizontal: 10,
+          paddingHorizontal: 16,
           marginTop: 60,
-          paddingBottom: 150,
           flexGrow: 1,
+          ...defaultStyles,
+          ...styles,
         }}
         keyExtractor={(item) => item.etag}
         data={booksSearchList}

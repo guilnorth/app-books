@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Text, Div, Button, Image, Icon } from 'react-native-magnus';
 import { BooksContext } from '../context/BookContext';
+import COLORS from '../styles/colors';
+import Globals from '../styles/globals';
+import Metrics from '../styles/metrics';
 
 export default function DetailBook({ book }: any) {
   const {
@@ -21,73 +24,48 @@ export default function DetailBook({ book }: any) {
   };
 
   return (
-    <Div p={15}>
+    <Div pt={100} mx={45}>
       <Div flexDir="row" mt={15} alignItems="center">
         <Image
-          rounded={1}
-          h={100}
+          h={141}
           w={100}
+          style={{ borderColor: COLORS.detailPrimary, borderWidth: 1 }}
           resizeMode="contain"
           source={{
             uri: book?.volumeInfo?.imageLinks?.smallThumbnail,
           }}
         />
-        <Text
-          color="white"
-          fontSize="xl"
-          fontWeight="bold"
-          mr={100}
-          ml={10}
-          style={{ flexWrap: 'wrap' }}
-        >
-          {book?.volumeInfo?.title}
-        </Text>
-      </Div>
-      <Div mt={20}>
-        <Button
-          fontWeight="bold"
-          onPress={onHandleFavoriteButton}
-          mt="lg"
-          ml="md"
-          px="xl"
-          py="lg"
-          bg="yellow500"
-          rounded="circle"
-          color="white"
-          shadow={2}
-          prefix={
+        <Div flex={1} flexDir="column" ml={Metrics.defaultSpacing}>
+          <Text style={Globals.titleBook}>{book?.volumeInfo?.title}</Text>
+          <Text
+            mt={8}
+            color={COLORS.authorCardBlack}
+            fontSize={16}
+            fontWeight="400"
+          >
+            {book?.volumeInfo?.authors
+              ? book?.volumeInfo?.authors.join(', ')
+              : ''}
+          </Text>
+          <Button
+            bg="purple100"
+            h={40}
+            w={40}
+            mt={35}
+            rounded="circle"
+            onPress={onHandleFavoriteButton}
+          >
             <Icon
-              name={favorite ? 'heart' : 'heart-outline'}
               fontSize={16}
-              color="white"
-              fontFamily="MaterialCommunityIcons"
-              mr={10}
+              name={favorite ? 'heart' : 'hearto'}
+              color={COLORS.detailPrimary}
             />
-          }
-        >
-          {favorite ? 'Favorito' : 'Salvar nos Favoritos'}
-        </Button>
+          </Button>
+        </Div>
       </Div>
+
       <Div>
-        <Text mt={10} color="white" fontSize="xl" fontWeight="400">
-          Por:{' '}
-          {book?.volumeInfo?.authors
-            ? book?.volumeInfo?.authors.join(', ')
-            : 'Sem informação de autores'}
-        </Text>
-      </Div>
-      <Div>
-        <Text
-          fontSize="lg"
-          fontWeight="bold"
-          textTransform="uppercase"
-          color="red400"
-          letterSpacing={2}
-          mt="lg"
-        >
-          Descrição
-        </Text>
-        <Text mt={10} color="white" fontSize="xl" fontWeight="bold">
+        <Text mt={32} style={Globals.decriptionBookDetail}>
           {book?.volumeInfo?.description
             ? book?.volumeInfo?.description
             : 'Este livro não tem descrição :/'}

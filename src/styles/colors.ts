@@ -1,10 +1,13 @@
 const COLORS = {
-  primary: '#3c366b',
-  primaryLight: '#7f9cf5',
-  primaryDark: '#3c366b',
-  bgCard: '#dd6b20',
-  bgPageSearch: '#4c51bf',
-  bgPageFavorites: '#2b6cb0',
+  bgCard: '#2F2F2F',
+  bgPage: '#2B2B2B',
+  titleBook: '#479796',
+  authorCard: '#F2DF69',
+  authorCardBlack: '#42413E',
+  bgTabBar: '#1E1D20',
+  white: '#FFFFFF',
+  textDescription: '#695F5F',
+  detailPrimary: '#684AC0',
 };
 
 export default COLORS;

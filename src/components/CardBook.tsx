@@ -1,62 +1,59 @@
 import React from 'react';
 import { Text, Div, Button, Image } from 'react-native-magnus';
-import Svg, { Rect } from 'react-native-svg';
+import COLORS from '../styles/colors';
+import Globals from '../styles/globals';
+import Metrics from '../styles/metrics';
 
 export default function CardBook({ book, press }: any) {
   return (
     <Button
-      m="md"
+      mb={Metrics.defaultSpacing}
+      p={0}
       row
       alignItems="center"
       justifyContent="center"
       flex={1}
       onPress={press}
-      bg="orange600"
-      rounded="xl"
-      style={{ width: '100%' }}
+      bg={COLORS.bgCard}
+      // rounded="xl"
+      style={{
+        width: '100%',
+        borderColor: '#fff',
+        borderWidth: 1,
+        borderStyle: 'solid',
+        padding: Metrics.defaultSpacing,
+        borderRadius: 5,
+      }}
     >
-      <Div position="absolute" top={0} left={0} h={700} w={700} zIndex={1}>
-        <Svg viewBox="0 0 375 283" fill="none" opacity={0.1}>
-          <Rect
-            x={159.52}
-            y={175}
-            width={152}
-            height={152}
-            rx={8}
-            transform="rotate(-45 159.52 175)"
-            fill="#fff"
-          />
-          <Rect
-            y={107.48}
-            width={152}
-            height={152}
-            rx={8}
-            transform="rotate(-45 0 107.48)"
-            fill="#fff"
-          />
-        </Svg>
-      </Div>
-      <Div alignItems="flex-start" zIndex={2} py="2xl" px="2xl" flex={1}>
-        <Div flexDir="row" justifyContent="flex-start" mb={15}>
+      <Div alignItems="flex-start" zIndex={2} flex={1}>
+        <Div
+          flexDir="row"
+          justifyContent="flex-start"
+          mb={Metrics.defaultSpacing}
+        >
           <Image
-            // ml={10}
-            h={100}
+            h={141}
             w={100}
+            style={{ borderColor: COLORS.detailPrimary, borderWidth: 1 }}
             resizeMode="contain"
             source={{
               uri: book?.volumeInfo?.imageLinks?.smallThumbnail,
             }}
           />
-          <Div flex={1}>
+          <Div flex={1} ml={Metrics.defaultSpacing}>
             <Text
-              color="white"
-              fontSize="xl"
-              fontWeight="bold"
-              style={{ flexWrap: 'wrap' }}
+              style={Globals.titleBook}
+              numberOfLines={3}
+              ellipsizeMode="tail"
             >
               {book?.volumeInfo?.title}
             </Text>
-            <Text mt={0} color="white" fontSize={12} fontWeight="400">
+            <Text
+              mt={8}
+              color={COLORS.authorCard}
+              fontSize={16}
+              fontWeight="400"
+            >
               {book?.volumeInfo?.authors
                 ? book?.volumeInfo?.authors.join(', ')
                 : ''}
@@ -65,11 +62,9 @@ export default function CardBook({ book, press }: any) {
         </Div>
         <Div>
           <Text
-            color="white"
-            fontSize="xl"
             numberOfLines={5}
             ellipsizeMode="tail"
-            style={{ flexWrap: 'wrap' }}
+            style={Globals.decriptionBookCard}
           >
             {book?.volumeInfo?.description}
           </Text>
