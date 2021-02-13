@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Div, Text } from 'react-native-magnus';
 import ListBooks from '../../components/ListBooks';
 import { BooksContext } from '../../context/BookContext';
@@ -8,20 +8,30 @@ import COLORS from '../../styles/colors';
 export default function Favorites() {
   const { favoritesBooks } = useContext(BooksContext);
 
-  const headerComponent = () => (
-    <Text fontWeight="bold" fontSize="4xl" textAlign="center" color="white">
-      Meus Favoritos
-    </Text>
+  const HeaderComponent = () => (
+    <Div mb={60} alignSelf="flex-start">
+      <Text
+        fontWeight="bold"
+        fontSize={28}
+        textAlign="left"
+        color="white"
+        lineHeight={32}
+        mb={4}
+      >
+        Meus Favoritos
+      </Text>
+      <Div
+        style={{ borderBottomColor: 'white', borderBottomWidth: 1, width: 120 }}
+      />
+    </Div>
   );
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Div style={styles.container} bg={COLORS.bgPageFavorites}>
-        <ListBooks
-          booksSearchList={favoritesBooks}
-          headerComponent={headerComponent}
-        />
-      </Div>
-    </SafeAreaView>
+    <Div style={styles.container} bg={COLORS.bgPage}>
+      <ListBooks
+        booksSearchList={favoritesBooks}
+        headerComponent={HeaderComponent}
+      />
+    </Div>
   );
 }
 
