@@ -5,6 +5,7 @@ import { Modalize } from 'react-native-modalize';
 import { Portal } from 'react-native-portalize';
 import DetailBook from './DetailBook';
 import COLORS from '../styles/colors';
+import Metrics from '../styles/metrics';
 
 export default function ModalBook({ bookSelected, modalizeRef }: any) {
   const renderHeader = () => (
@@ -14,7 +15,7 @@ export default function ModalBook({ bookSelected, modalizeRef }: any) {
         modalizeRef.current?.close();
       }}
     >
-      <Icon name="close" />
+      <Icon name="close" color="#151515" fontSize={14} />
     </TouchableOpacity>
   );
 
@@ -25,7 +26,12 @@ export default function ModalBook({ bookSelected, modalizeRef }: any) {
         modalTopOffset={100}
         handlePosition="inside"
         HeaderComponent={renderHeader}
-        modalStyle={{ backgroundColor: COLORS.primary }}
+        modalStyle={{ backgroundColor: COLORS.white }}
+        handleStyle={{
+          top: Metrics.defaultSpacing,
+          width: 73,
+          height: 8,
+        }}
       >
         <DetailBook book={bookSelected} />
       </Modalize>
@@ -40,8 +46,8 @@ const styles = StyleSheet.create({
   },
   modalHeader: {
     position: 'absolute',
-    top: -10,
-    right: 10,
+    top: Metrics.defaultSpacing,
+    right: Metrics.defaultSpacing,
     zIndex: 9000,
 
     alignItems: 'center',
@@ -50,7 +56,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
 
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
     borderRadius: 15,
   },
 });
