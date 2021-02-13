@@ -13,7 +13,6 @@ export default function DetailBook({ book }: any) {
 
   const onHandleFavoriteButton = () => {
     if (favorite) {
-      console.log('remove');
       book.isFavoriteBook_APP = false;
       removeBookFavoriteList(book);
     } else {

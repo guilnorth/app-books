@@ -21,7 +21,15 @@ export default function useBooks() {
    * @param keepList
    */
   function searchBooks(paramSearch: string, keepList = false): any {
-    if (!paramSearch) return;
+    /** Block request if don't have param or if is the end of list * */
+    if (
+      !paramSearch ||
+      (keepList &&
+        booksSearchList.items &&
+        booksSearchList?.totalItems == booksSearchList?.items.length)
+    )
+      return;
+
     const newStartIndex = keepList ? booksSearchList.items.length : 0;
 
     BooksService.getBooks(paramSearch, newStartIndex)
