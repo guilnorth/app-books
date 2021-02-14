@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderSearch renders correctly App 1`] = `
+<View
+  alignSelf="flex-start"
+  borderStyle="solid"
+  mx={16}
+  pointerEvents="auto"
+  style={
+    Object {
+      "alignItems": undefined,
+      "alignSelf": "flex-start",
+      "backgroundColor": "rgba(0,0,0,0)",
+      "borderRadius": 0,
+      "borderStyle": "solid",
+      "flex": undefined,
+      "flexDirection": "column",
+      "flexWrap": "nowrap",
+      "height": undefined,
+      "justifyContent": undefined,
+      "marginBottom": 20,
+      "marginHorizontal": 16,
+      "marginTop": 20,
+      "maxHeight": undefined,
+      "maxWidth": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "opacity": undefined,
+      "overflow": undefined,
+      "position": "relative",
+      "shadowColor": undefined,
+      "width": undefined,
+      "zIndex": undefined,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "color": "#FFFFFF",
+        "flex": undefined,
+        "fontFamily": undefined,
+        "fontSize": 28,
+        "fontStyle": undefined,
+        "fontWeight": "bold",
+        "height": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 32,
+        "marginBottom": 4,
+        "maxHeight": undefined,
+        "maxWidth": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "opacity": undefined,
+        "overflow": "hidden",
+        "textAlign": "left",
+        "textAlignVertical": "center",
+        "textDecorationColor": undefined,
+        "textDecorationLine": undefined,
+        "textDecorationStyle": undefined,
+        "textShadowColor": undefined,
+        "textShadowOffset": Object {
+          "height": undefined,
+          "width": undefined,
+        },
+        "textShadowRadius": undefined,
+        "textTransform": "none",
+        "width": undefined,
+      }
+    }
+  >
+    Busca
+  </Text>
+  <View
+    borderStyle="solid"
+    pointerEvents="auto"
+    style={
+      Object {
+        "alignItems": undefined,
+        "alignSelf": undefined,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderBottomColor": "#FFFFFF",
+        "borderBottomWidth": 1,
+        "borderRadius": 0,
+        "borderStyle": "solid",
+        "flex": undefined,
+        "flexDirection": "column",
+        "flexWrap": "nowrap",
+        "height": undefined,
+        "justifyContent": undefined,
+        "maxHeight": undefined,
+        "maxWidth": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "position": "relative",
+        "shadowColor": undefined,
+        "width": 40,
+        "zIndex": undefined,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2B2B2B",
+        "borderColor": "#FFFFFF",
+        "borderRadius": 6,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "height": undefined,
+        "marginTop": 40,
+        "maxHeight": undefined,
+        "maxWidth": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "opacity": undefined,
+        "paddingHorizontal": 12,
+        "paddingVertical": 12,
+        "width": "100%",
+        "zIndex": undefined,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      clearButtonMode="while-editing"
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Pesquise pelo livro aqui"
+      placeholderTextColor="rgba(255, 255, 255, 0.4)"
+      px="lg"
+      py="lg"
+      rejectResponderTermination={true}
+      returnKeyType="search"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "flex": 1,
+          "fontFamily": undefined,
+          "fontSize": 16,
+          "fontStyle": undefined,
+          "fontWeight": undefined,
+          "letterSpacing": undefined,
+          "lineHeight": undefined,
+          "padding": 0,
+          "textAlign": undefined,
+          "textAlignVertical": undefined,
+          "textDecorationColor": undefined,
+          "textDecorationLine": undefined,
+          "textDecorationStyle": undefined,
+          "textShadowColor": undefined,
+          "textShadowOffset": Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          "textShadowRadius": undefined,
+          "textTransform": undefined,
+        }
+      }
+      testID="inputSearch"
+      underlineColorAndroid="transparent"
+    />
+    <View
+      style={
+        Object {
+          "alignSelf": undefined,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": 5,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        alignItems="center"
+        flexDir="row"
+        focusable={true}
+        justifyContent="center"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        position="relative"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(0,0,0,0)",
+              "borderRadius": 99999,
+              "flex": undefined,
+              "flexDirection": "row",
+              "height": 40,
+              "justifyContent": "center",
+              "maxHeight": undefined,
+              "maxWidth": undefined,
+              "minHeight": undefined,
+              "minWidth": undefined,
+              "opacity": undefined,
+              "overflow": "hidden",
+              "padding": 12,
+              "position": "relative",
+              "width": 40,
+              "zIndex": undefined,
+            },
+            false,
+          ]
+        }
+        testID="submitSearch"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "position": "relative",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": undefined,
+                "backgroundColor": undefined,
+                "bottom": undefined,
+                "color": "#FFFFFF",
+                "fontSize": 13,
+                "height": undefined,
+                "justifyContent": "center",
+                "left": undefined,
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+                "minHeight": undefined,
+                "minWidth": undefined,
+                "opacity": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 13,
+                  },
+                  undefined,
+                  Object {
+                    "fontFamily": "feather",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
