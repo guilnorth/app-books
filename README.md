@@ -22,8 +22,10 @@ Disponível via Expo em:
 > - Magnus Ui (https://magnus-ui.com/) para alguns componentes
 > - Modalize (https://github.com/jeremybarbet/react-native-modalize)
 
-
-![](app.gif)
+### Preview
+<p align="center">
+  <img src="https://media2.giphy.com/media/0xxZaAqu2way95bMuy/giphy.gif" alt="gif" />
+</p>
 
 ### Instalação Local
 
