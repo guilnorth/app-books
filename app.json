@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app-books",
+    "name": "App Books",
     "slug": "app-books",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#2B2B2B"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
