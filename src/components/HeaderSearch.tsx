@@ -5,7 +5,7 @@ import COLORS from '../styles/colors';
 import Metrics from '../styles/metrics';
 import { BooksContext } from '../context/BookContext';
 
-export default function HeaderSearch({ refInput }: any) {
+export default function HeaderSearch() {
   const { searchBooks, term, setTerm } = useContext(BooksContext);
   const handleSearch = (keepList = false) => {
     searchBooks(keepList);
@@ -32,6 +32,7 @@ export default function HeaderSearch({ refInput }: any) {
       />
 
       <Input
+        testID="inputSearch"
         mt={40}
         bg={COLORS.bgPage}
         style={{ width: '100%' }}
@@ -43,6 +44,7 @@ export default function HeaderSearch({ refInput }: any) {
         returnKeyType="search"
         suffix={
           <Button
+            testID="submitSearch"
             bg="transparent"
             h={40}
             w={40}
@@ -54,7 +56,6 @@ export default function HeaderSearch({ refInput }: any) {
             <Icon name="search" color="white" fontFamily="Feather" />
           </Button>
         }
-        ref={refInput}
         onSubmitEditing={() => {
           handleSearch();
         }}

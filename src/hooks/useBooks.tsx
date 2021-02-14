@@ -11,9 +11,11 @@ export default function useBooks() {
    * Recuperando os favoritos
    */
   useEffect(() => {
+    let isSubscribed = true;
     BooksService.getStorage(`${STORAGE_KEY}/favorites`).then((favorites) => {
       if (favorites) setFavoritesBooks(favorites);
     });
+    return () => (isSubscribed = false);
   }, []);
 
   /**
